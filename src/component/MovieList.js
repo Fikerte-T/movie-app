@@ -11,7 +11,9 @@ class MovieList extends React.Component{
                 </div>
                 {this.props.movieList.map((movie, index) =>
                 <div>
-                    <DisplayMovie  movieEach={movie} index={index} />
+                    <DisplayMovie  movieEach={movie} index={index}
+                    addFavorite = {this.props.addFavorite}
+                    />
                 </div>
                 )}
 

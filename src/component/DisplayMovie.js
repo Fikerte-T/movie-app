@@ -19,6 +19,7 @@ render(){
                 <b> {this.props.movieEach.index}</b> 
             </p>
             <AddDetail movieEach={this.props.movieEach} />
+            <button onClick = {() => {this.props.addFavorite(this.props.movieEach.name)}}>Favorite</button>
         </div>
     </>
     )
