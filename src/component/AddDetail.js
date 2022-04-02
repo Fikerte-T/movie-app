@@ -23,7 +23,15 @@ state = {
         <>
         <div>
           <h1>Hello react</h1>
-          <p>  {this.props.name}</p>
+          {/* <p>  {this.props.name}</p>
+           */}
+           <div>
+                {this.props.movieList.map((movie, index) =>
+                    // <DisplayMovie  movieEach={movie} index={index}
+                    // handleChange={this.props.handleChange} />
+                    <p>{movie.name}</p>
+                )}
+            </div>
           <button onClick={this.handleHide}>Hide</button>
           
         </div>

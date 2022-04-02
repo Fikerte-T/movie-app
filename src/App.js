@@ -55,7 +55,7 @@ class App extends React.Component {
         <AddMovie 
           addMovie= {this.addMovie}
         ></AddMovie>
-        <AddDetail handleShow={this.state.handleShow} handleHide={this.state.handleHide}/>
+        <AddDetail movieList={this.state.movieList} handleShow={this.state.handleShow} handleHide={this.state.handleHide}/>
         </div>
            
       </>
