@@ -18,19 +18,13 @@ state = {
   };
 
   render() {
-    if (this.state.isActive) {
+      if (this.state.isActive) {
       return (
         <>
         <div>
-          <h1>Hello react</h1>
-          {/* <p>  {this.props.name}</p>
-           */}
            <div>
-                {this.props.movieList.map((movie, index) =>
-                    // <DisplayMovie  movieEach={movie} index={index}
-                    // handleChange={this.props.handleChange} />
-                    <p>{movie.name}</p>
-                )}
+                <b> MovieDirector : {this.props.movieEach.directorName}
+                </b>
             </div>
           <button onClick={this.handleHide}>Hide</button>
           

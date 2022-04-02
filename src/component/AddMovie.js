@@ -5,18 +5,22 @@ class AddMovie extends React.Component{
         name:"",
         rating: "",
         genres:"",
-        details:{
-            directorName:"",
-            releaseYear: "",
-            description: ""
-        },
-       
+        directorName:"",
+        releaseYear: "",
+        description: "",       
     }
     addMovie=()=>{
         this.props.addMovie(this.state.name, this.state.rating, this.state.genres, 
         
-            this.state.directorName) //this.state.details.releaseYear,
-            // this.state.details.description )
+            this.state.directorName)
+            this.setState({
+                name:"",
+                rating: "",
+                genres:"",
+                directorName:"",
+                releaseYear: "",
+                description: "",       
+              });
     }
     handleChangeName= (event)=>{
      this.setState({name: event.target.value})
@@ -38,12 +42,13 @@ class AddMovie extends React.Component{
         }
     handleChangeDescription= (event)=>{
             this.setState({description: event.target.value})
+           
      }
     
     render(){
         return(
             <>
-            <button onClick= {this.addMovie}> <h3>AddMovie</h3></button>
+            <button onClick= {this.addMovie}>AddMovie</button>
             <div>
                  
                 <label> Name</label>

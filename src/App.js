@@ -8,22 +8,8 @@ import AddDetail from './component/AddDetail';
 class App extends React.Component {
 
   state ={
-    movieList:[{
-      name : "emi",
-      rating: 2,
-      genres:"romantic",
-      isFavorite: true,
-      details:{
-        directorName:" Baba",
-        releaseYear: 2014,
-        description: "this is family movie "
-      },
-      directorName:" Baba",
-      
-    }],
-    isActive: false,
-    isMovieDetail: false
-  }
+    movieList: []
+     }
 
   addMovie =( name,rating, genres, directorName)=>{
     const newmovieList=[...this.state.movieList]
@@ -35,27 +21,16 @@ class App extends React.Component {
   handleChange = () =>{
     this.setState({isMovieDetail: !this.state.isMovieDetail})
   }
-  handleShow = () => {
-    this.setState({
-      isActive: true
-    });
-  };
-
-  handleHide = () => {
-    this.setState({
-      isActive: false
-    });
-  };
-
+ 
   render(){
     console.log("hi")
-    return ( <>
+    return ( 
+    <>
         <div>
-        <MovieList movieList={this.state.movieList} handleChange={this.state.handleChange}></MovieList>
-        <AddMovie 
-          addMovie= {this.addMovie}
-        ></AddMovie>
-        <AddDetail movieList={this.state.movieList} handleShow={this.state.handleShow} handleHide={this.state.handleHide}/>
+        <MovieList movieList={this.state.movieList} />
+        <AddMovie movieList={this.state.movieList} 
+          addMovie = {this.addMovie}
+        />    
         </div>
            
       </>

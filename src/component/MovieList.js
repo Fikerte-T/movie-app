@@ -1,15 +1,20 @@
 import React from "react"
 import DisplayMovie from "./DisplayMovie"
+import AddDetail from "./AddDetail"
 
 class MovieList extends React.Component{
     render(){
-        console.log("hi")
-        return(
+             return(
             <div>
+                <div>
+                    <h1>Movie List</h1>
+                </div>
                 {this.props.movieList.map((movie, index) =>
-                    <DisplayMovie  movieEach={movie} index={index}
-                    handleChange={this.props.handleChange} />
+                <div>
+                    <DisplayMovie  movieEach={movie} index={index} />
+                </div>
                 )}
+
             </div>
         )
     }

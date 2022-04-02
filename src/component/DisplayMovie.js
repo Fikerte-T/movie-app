@@ -5,13 +5,11 @@ import AddDetail from './AddDetail'
 class DisplayMovie extends React.Component{
 
 render(){
-   
+   console.log(this.props.movieEach)
     const btnS= this.props.isMovieDetail
     return(
         <>
-        <div>
-            <h1>Movie List</h1>
-        </div>
+      
         <div>
             <p> 
                 <b> MovieName : {this.props.movieEach.name} , 
@@ -20,24 +18,7 @@ render(){
                 <b>  MovieGenres: {this.props.movieEach.genres} </b>
                 <b> {this.props.movieEach.index}</b> 
             </p>
-           {/* <div>
-                < AddDetail />
-                        {/* <h3> Movie detail</h3>
-                        <p> <b> MovieName : {this.props.movieEach.name} </b> </p>
-                        <p> <b> MovieName : {this.props.movieEach.name} </b> </p>
-                        <p> <b> MovieName : {this.props.movieEach.name} </b> </p>
-                 */}
-                {/* < AddDetail />
-           </div> */} 
-           <AddDetail/>
-            <MovieDetail  handleChange={this.props.handleChange}/>
-             { btnS && (<div>
-                
-                    <p>
-                        <b> {this.props.movieEach.directorName }</b>
-                    </p>
-                </div>) }
-           
+            <AddDetail movieEach={this.props.movieEach} />
         </div>
     </>
     )
