@@ -21,7 +21,7 @@ render(){
    if(this.state.isViewMode) {
        viewMode.display = 'none'
    }
-   const {name, genre, releaseYear, directorName, description, rating} = this.props.movieEach
+   const {id, name, genre, releaseYear, directorName, description, rating} = this.props.movieEach
     return(
         <>
         <div>
@@ -34,7 +34,7 @@ render(){
         </div>
         <div>
             {this.state.isViewMode ? <button onClick = {this.handleShow}>Detail</button> : <button onClick={this.handleHide}>Hide</button> }
-            <button onClick = {() => {this.props.addFavorite(this.props.movieEach.name)}}>Favorite</button>
+            <button onClick = {() => {this.props.addFavorite(id)}}>Favorite</button>
         </div>
     </>
     )

@@ -21,7 +21,7 @@ render(){
                             return (
                             <>
                             <p>{movie.name}</p>
-                            <button onClick = {() => this.props.removeFromFavorite(movie.name)}>Remove</button>
+                            <button onClick = {() => this.props.removeFromFavorite(movie.id)}>Remove</button>
                             </>
                             );
                         }

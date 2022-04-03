@@ -30,10 +30,10 @@ class App extends React.Component {
 
   }
   
-  addToFavorite = (name) => {
+  addToFavorite = (id) => {
     this.setState((prevState) => ({
       movieList: prevState.movieList.map((movie) => {
-        if (movie.name === name) {
+        if (movie.id === id) {
           return {
             ...movie,
             isFavorite: true,
@@ -44,10 +44,10 @@ class App extends React.Component {
     }));
   }
 
-  removeFromFavorite = (name) => {
+  removeFromFavorite = (id) => {
     this.setState((prevState) => ({
       movieList: prevState.movieList.map((movie) => {
-        if (movie.name === name) {
+        if (movie.id === id) {
           return {
             ...movie,
             isFavorite: false,
