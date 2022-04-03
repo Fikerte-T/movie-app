@@ -1,9 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import React from "react"
 import AddMovie from './component/AddMovie'
 import MovieList from './component/MovieList'
-import AddDetail from './component/AddDetail';
 import FavoriteMovie from './component/FavoriteMovie'
 import { v4 as uuid4 } from 'uuid';
 

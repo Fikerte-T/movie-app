@@ -1,6 +1,4 @@
 import React from "react"
-import MovieDetail from './MovieDetail'
-import AddDetail from './AddDetail'
 
 class FavoriteMovie extends React.Component{
 
