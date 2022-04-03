@@ -28,7 +28,21 @@ class App extends React.Component {
         if (movie.name === name) {
           return {
             ...movie,
-            isFavorite: !movie.isFavorite,
+            isFavorite: true,
+          };
+        }
+        return movie;
+      }),
+    }));
+  }
+
+  removeFromFavorite = (name) => {
+    this.setState((prevState) => ({
+      movieList: prevState.movieList.map((movie) => {
+        if (movie.name === name) {
+          return {
+            ...movie,
+            isFavorite: false,
           };
         }
         return movie;
@@ -48,6 +62,7 @@ class App extends React.Component {
           addMovie = {this.addMovie}
         />    
         <FavoriteMovie movieList={this.state.movieList}
+         removeFromFavorite = {this.removeFromFavorite}
         
         />
         </div>

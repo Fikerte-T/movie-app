@@ -20,7 +20,12 @@ render(){
                 {this.props.movieList.map((movie) =>
                     {
                         if(movie.isFavorite) {
-                            return <p>{movie.name}</p>
+                            return (
+                            <>
+                            <p>{movie.name}</p>
+                            <button onClick = {() => this.props.removeFromFavorite(movie.name)}>Remove</button>
+                            </>
+                            );
                         }
                     }
                 
