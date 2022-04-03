@@ -5,6 +5,8 @@ import AddMovie from './component/AddMovie'
 import MovieList from './component/MovieList'
 import AddDetail from './component/AddDetail';
 import FavoriteMovie from './component/FavoriteMovie'
+import { v4 as uuid4 } from 'uuid';
+
 
 class App extends React.Component {
 
@@ -12,17 +14,25 @@ class App extends React.Component {
     movieList: []
      }
 
-  addMovie =( name,rating, genres, directorName, isFavorite = false)=>{
-    const newmovieList=[...this.state.movieList]
-    const item ={name, rating, genres, directorName, isFavorite }
-    newmovieList.push(item)
-    this.setState({movieList: newmovieList})
+  addMovie = (name, rating, genres, directorName, releaseYear, description)=>{
+    const newMovie = {
+      id: uuid4(),
+      name: name,
+      rating: rating,
+      genre: genres,
+      directorName: directorName,
+      releaseYear: releaseYear,
+      description: description,
+      isFavorite: false
+    }
+    
+    this.setState({
+      movieList: [...this.state.movieList, newMovie], 
+    })
 
   }
-  handleChange = () =>{
-    this.setState({isMovieDetail: !this.state.isMovieDetail})
-  }
-  handleFavorite = (name) => {
+  
+  addToFavorite = (name) => {
     this.setState((prevState) => ({
       movieList: prevState.movieList.map((movie) => {
         if (movie.name === name) {
@@ -56,7 +66,7 @@ class App extends React.Component {
     <>
         <div>
         <MovieList movieList={this.state.movieList}
-         addFavorite = {this.handleFavorite}
+         addFavorite = {this.addToFavorite}
         />
         <AddMovie movieList={this.state.movieList} 
           addMovie = {this.addMovie}
