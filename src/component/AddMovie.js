@@ -31,9 +31,6 @@ class AddMovie extends React.Component{
     handleChangeRating= (event)=>{
     this.setState({rating: event.target.value})
     }
-    handleChangeisFavorite= (event)=>{
-        this.setState({isFavorite: event.target.value})
-       }
     handleChangeDirectorName= (event)=>{
     this.setState({directorName: event.target.value})
     }

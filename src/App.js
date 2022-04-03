@@ -57,6 +57,17 @@ class App extends React.Component {
       }),
     }));
   }
+
+  setUpdate = (newState, id) => {
+    this.setState({
+      movieList: this.state.movieList.map((updatedMovie) => {
+        if(updatedMovie.id === id) {
+          updatedMovie = newState
+        }
+        return updatedMovie
+      })
+    }) 
+  }
   
   deleteMovie = (id) => {
     this.setState({
@@ -73,13 +84,13 @@ class App extends React.Component {
         <MovieList movieList={this.state.movieList}
          addFavorite = {this.addToFavorite}
          deleteMovie = {this.deleteMovie}
+         setUpdate = {this.setUpdate}
         />
         <AddMovie movieList={this.state.movieList} 
           addMovie = {this.addMovie}
         />    
         <FavoriteMovie movieList={this.state.movieList}
          removeFromFavorite = {this.removeFromFavorite}
-        
         />
         </div>
            

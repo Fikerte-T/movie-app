@@ -21,6 +21,7 @@ class MovieList extends React.Component{
                         <DisplayMovie  movieEach={movie} index={index}
                         addFavorite = {this.props.addFavorite}
                         deleteMovie = {this.props.deleteMovie}
+                        setUpdate = {this.props.setUpdate}
                         />
                     </div>
                     )}

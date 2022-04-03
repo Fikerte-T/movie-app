@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## DONE
+
+## To Improve
+ - how to edit mutiple inputs
+ - rating - stars instead of number
+ - use routing and separate pages for adding, listing, favorite movie lists etc
