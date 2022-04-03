@@ -35,6 +35,8 @@ render(){
         <div>
             {this.state.isViewMode ? <button onClick = {this.handleShow}>Detail</button> : <button onClick={this.handleHide}>Hide</button> }
             <button onClick = {() => {this.props.addFavorite(id)}}>Favorite</button>
+            <button onClick = {() => {this.props.deleteMovie(id)}}>Delete</button>
+
         </div>
     </>
     )

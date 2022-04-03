@@ -20,6 +20,7 @@ class MovieList extends React.Component{
                     <div>
                         <DisplayMovie  movieEach={movie} index={index}
                         addFavorite = {this.props.addFavorite}
+                        deleteMovie = {this.props.deleteMovie}
                         />
                     </div>
                     )}

@@ -57,7 +57,14 @@ class App extends React.Component {
       }),
     }));
   }
-
+  
+  deleteMovie = (id) => {
+    this.setState({
+      movieList: [
+        ...this.state.movieList.filter((movie) => movie.id !== id)
+      ]
+    })
+  }
  
   render(){
     return ( 
@@ -65,6 +72,7 @@ class App extends React.Component {
         <div>
         <MovieList movieList={this.state.movieList}
          addFavorite = {this.addToFavorite}
+         deleteMovie = {this.deleteMovie}
         />
         <AddMovie movieList={this.state.movieList} 
           addMovie = {this.addMovie}
