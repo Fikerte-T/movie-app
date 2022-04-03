@@ -1,24 +1,32 @@
 import React from "react"
 import DisplayMovie from "./DisplayMovie"
-import AddDetail from "./AddDetail"
 
 class MovieList extends React.Component{
     render(){
-             return(
-            <div>
+        if(this.props.movieList.length <=0) {
+            return (
                 <div>
                     <h1>Movie List</h1>
+                    <h3>No movies in the list</h3>
                 </div>
-                {this.props.movieList.map((movie, index) =>
+            )
+        } else {
+            return(
                 <div>
-                    <DisplayMovie  movieEach={movie} index={index}
-                    addFavorite = {this.props.addFavorite}
-                    />
+                    <div>
+                        <h1>Movie List</h1>
+                    </div>
+                    {this.props.movieList.map((movie, index) =>
+                    <div>
+                        <DisplayMovie  movieEach={movie} index={index}
+                        addFavorite = {this.props.addFavorite}
+                        />
+                    </div>
+                    )}
                 </div>
-                )}
-
-            </div>
-        )
+            )
+        }
+            
     }
 
 }
